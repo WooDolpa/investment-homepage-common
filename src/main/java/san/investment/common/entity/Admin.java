@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
+import san.investment.common.converter.AdminStatusConverter;
 import san.investment.common.enums.AdminStatus;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
@@ -31,7 +32,7 @@ public class Admin extends BaseEntity {
     @Comment("관리자 명")
     private String adminName;
 
-//    @Convert(converter = AdminStatusConverter.class)
+    @Convert(converter = AdminStatusConverter.class)
     @Column(name = "admin_status")
     @Comment("관리자 상태")
     private AdminStatus adminStatus;
