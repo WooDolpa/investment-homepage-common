@@ -1,4 +1,4 @@
-package san.investment.common.entity;
+package san.investment.common.entity.admin;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 import san.investment.common.converter.AdminStatusConverter;
+import san.investment.common.entity.BaseEntity;
 import san.investment.common.enums.AdminStatus;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
@@ -18,6 +19,7 @@ public class Admin extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Comment("관리자 번호")
     private Integer adminNo;
 
     @Column(name = "login_id", nullable = false, length = 20)
