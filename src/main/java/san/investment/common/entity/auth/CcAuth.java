@@ -42,4 +42,8 @@ public class CcAuth extends BaseEntity {
     public void changeExpireDate(LocalDateTime expireDate) {
         this.expireDate = expireDate;
     }
+
+    public void expireRefreshToken() {
+        this.refreshToken = "";
+    }
 }
