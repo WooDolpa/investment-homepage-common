@@ -7,4 +7,7 @@ public class ApiConstants {
 
     public static final String RESPONSE_SUCCESS_MESSAGE         = "success";
     public static final String RESPONSE_FAILURE_MESSAGE         = "failure";
+
+    public static final String REQUEST_HEADER_ADMIN_ID      =   "adminId";
+    public static final String REQUEST_HEADER_ADMIN_NAME    =   "adminName";
 }
