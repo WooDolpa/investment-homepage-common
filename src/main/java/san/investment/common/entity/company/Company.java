@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
+import org.springframework.util.StringUtils;
 import san.investment.common.converter.DataStatusConverter;
 import san.investment.common.entity.BaseEntity;
 import san.investment.common.enums.DataStatus;
@@ -61,4 +62,46 @@ public class Company extends BaseEntity {
     @Column(name = "data_status", nullable = false)
     @Comment("데이터 상태")
     private DataStatus dataStatus;
+
+    public void changeCompanyName(String companyName) {
+        if(StringUtils.hasText(companyName)) {
+            this.companyName = companyName;
+        }
+    }
+
+    public void changeCompanyInfo(String companyInfo) {
+        if(StringUtils.hasText(companyInfo)) {
+            this.companyInfo = companyInfo;
+        }
+    }
+
+    public void changePostCode(String postCode) {
+        if(StringUtils.hasText(postCode)) {
+            this.postCode = postCode;
+        }
+    }
+
+    public void changeAddress(String address) {
+        if(StringUtils.hasText(address)) {
+            this.address = address;
+        }
+    }
+
+    public void changeAddressDetail(String addressDetail) {
+        if(StringUtils.hasText(addressDetail)) {
+            this.addressDetail = addressDetail;
+        }
+    }
+
+    public void changeLogoUrl(String logoUrl) {
+        if(StringUtils.hasText(logoUrl)) {
+            this.logoUrl = logoUrl;
+        }
+    }
+
+    public void changeMainImgUrl(String mainImgUrl) {
+        if(StringUtils.hasText(mainImgUrl)) {
+            this.mainImgUrl = mainImgUrl;
+        }
+    }
 }
