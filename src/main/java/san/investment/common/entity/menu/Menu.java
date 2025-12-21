@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
+import org.springframework.util.StringUtils;
 import san.investment.common.converter.DataStatusConverter;
 import san.investment.common.entity.BaseEntity;
 import san.investment.common.enums.DataStatus;
@@ -41,4 +42,30 @@ public class Menu extends BaseEntity {
     @Column(name = "data_status", nullable = false)
     @Comment("데이터 상태")
     private DataStatus dataStatus;
+
+    public void changeMenuName(String menuName) {
+        if(StringUtils.hasText(menuName)) {
+            this.menuName = menuName;
+        }
+    }
+
+    public void changeOrderNum(Integer orderNum) {
+        if(orderNum != null) {
+            this.orderNum = orderNum;
+        }
+    }
+
+    public void changeDataStatus(DataStatus dataStatus) {
+        if(dataStatus != null) {
+            this.dataStatus = dataStatus;
+        }
+    }
+
+    public void increaseOrderNum() {
+        orderNum++;
+    }
+
+    public void decreaseOrderNum() {
+        orderNum--;
+    }
 }
