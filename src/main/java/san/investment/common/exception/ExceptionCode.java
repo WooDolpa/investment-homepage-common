@@ -19,7 +19,10 @@ public enum ExceptionCode {
     INVALID_PASSWORD(HttpStatus.UNAUTHORIZED, "-101", "비밀번호가 일치하지 않습니다."),
 
     // 회사 관련
-    NOT_FOUND_COMPANY(HttpStatus.NOT_FOUND, "-110", "존재하지 않는 회사 아이디입니다.")
+    NOT_FOUND_COMPANY(HttpStatus.NOT_FOUND, "-110", "존재하지 않는 회사입니다."),
+
+    // 메뉴 관련
+    MENU_NOT_FOUND(HttpStatus.NOT_FOUND, "-120", "존재하지 않는 메뉴입니다.")
     ;
 
     private final HttpStatus httpStatus;
