@@ -22,7 +22,10 @@ public enum ExceptionCode {
     NOT_FOUND_COMPANY(HttpStatus.NOT_FOUND, "-110", "존재하지 않는 회사입니다."),
 
     // 메뉴 관련
-    MENU_NOT_FOUND(HttpStatus.NOT_FOUND, "-120", "존재하지 않는 메뉴입니다.")
+    MENU_NOT_FOUND(HttpStatus.NOT_FOUND, "-120", "존재하지 않는 메뉴입니다."),
+
+    // 포트폴리오 관련
+    PORTFOLIO_NOT_FOUND(HttpStatus.NOT_FOUND, "-130", "존재하지 않는 포트폴리오입니다.")
     ;
 
     private final HttpStatus httpStatus;
