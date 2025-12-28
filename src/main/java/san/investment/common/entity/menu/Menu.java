@@ -34,6 +34,10 @@ public class Menu extends BaseEntity {
     @Comment("메뉴명")
     private String menuName;
 
+    @Column(name = "menu_url")
+    @Comment("메뉴 경로")
+    private String menuUrl;
+
     @Column(name = "order_num")
     @Comment("순번")
     private Integer orderNum;
