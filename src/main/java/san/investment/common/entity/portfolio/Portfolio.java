@@ -80,4 +80,45 @@ public class Portfolio extends BaseEntity {
     public void decreaseOrderNum() {
         orderNum--;
     }
+
+    public void changePortfolioTitle(String portfolioTitle) {
+        if(StringUtils.hasText(portfolioTitle)) {
+            this.portfolioTitle = portfolioTitle;
+        }
+    }
+
+    public void changePortfolioSummary(String portfolioSummary) {
+        if(StringUtils.hasText(portfolioSummary)) {
+            this.portfolioSummary = portfolioSummary;
+        }
+    }
+
+    public void changePortfolioImgUrl(String portfolioImgUrl) {
+        if(StringUtils.hasText(portfolioImgUrl)) {
+            this.portfolioImgUrl = portfolioImgUrl;
+        }
+    }
+    public void changePortfolioContents(String portfolioContents) {
+        if(StringUtils.hasText(portfolioContents)) {
+            this.portfolioContents = portfolioContents;
+        }
+    }
+
+    public void changeOrderNum(Integer orderNum) {
+        if(orderNum != null && orderNum > 0) {
+            this.orderNum = orderNum;
+        }
+    }
+
+    public void changeDataStatus(DataStatus dataStatus) {
+        if(dataStatus != null) {
+            this.dataStatus = dataStatus;
+        }
+    }
+
+    public void deleteOrderNum(Integer orderNum) {
+        if(orderNum != null) {
+            this.orderNum = orderNum;
+        }
+    }
 }
