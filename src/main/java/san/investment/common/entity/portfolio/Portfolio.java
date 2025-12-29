@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 import org.springframework.util.StringUtils;
 import san.investment.common.converter.DataStatusConverter;
+import san.investment.common.converter.PortfolioTypeConverter;
 import san.investment.common.entity.BaseEntity;
 import san.investment.common.enums.DataStatus;
+import san.investment.common.enums.PortfolioType;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -51,19 +53,25 @@ public class Portfolio extends BaseEntity {
     @Comment("순번")
     private Integer orderNum;
 
+    @Convert(converter = PortfolioTypeConverter.class)
+    @Column(name = "portfolio_type", nullable = false)
+    @Comment("포트폴리오 타입")
+    private PortfolioType portfolioType;
+
     @Convert(converter = DataStatusConverter.class)
     @Column(name = "data_status", nullable = false)
     @Comment("데이터 상태")
     private DataStatus dataStatus;
 
     @Builder
-    public Portfolio(Integer portfolioNo, String portfolioTitle, String portfolioSummary, String portfolioImgUrl, String portfolioContents, Integer orderNum, DataStatus dataStatus) {
+    public Portfolio(Integer portfolioNo, String portfolioTitle, String portfolioSummary, String portfolioImgUrl, String portfolioContents, Integer orderNum, PortfolioType portfolioType, DataStatus dataStatus) {
         this.portfolioNo = portfolioNo;
         this.portfolioTitle = portfolioTitle;
         this.portfolioSummary = portfolioSummary;
         this.portfolioImgUrl = portfolioImgUrl;
         this.portfolioContents = portfolioContents;
         this.orderNum = orderNum;
+        this.portfolioType = portfolioType;
         this.dataStatus = dataStatus;
     }
 
@@ -113,6 +121,12 @@ public class Portfolio extends BaseEntity {
     public void changeDataStatus(DataStatus dataStatus) {
         if(dataStatus != null) {
             this.dataStatus = dataStatus;
+        }
+    }
+
+    public void changePortfolioType(PortfolioType portfolioType) {
+        if(portfolioType != null) {
+            this.portfolioType = portfolioType;
         }
     }
 
