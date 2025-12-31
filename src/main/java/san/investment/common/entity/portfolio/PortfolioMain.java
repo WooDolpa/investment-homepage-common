@@ -50,4 +50,16 @@ public class PortfolioMain extends BaseEntity {
     public void decreaseOrderNum() {
         this.orderNum--;
     }
+
+    public void changeOrderNum(Integer orderNum) {
+        if(orderNum != null) {
+            this.orderNum = orderNum;
+        }
+    }
+
+    public void changePortfolio(Portfolio portfolio) {
+        if(portfolio != null) {
+            this.portfolio = portfolio;
+        }
+    }
 }
