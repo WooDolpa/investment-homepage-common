@@ -27,7 +27,7 @@ public enum ExceptionCode {
     // 포트폴리오 관련
     PORTFOLIO_NOT_FOUND(HttpStatus.NOT_FOUND, "-130", "존재하지 않는 포트폴리오입니다."),
     PORTFOLIO_MAIN_NOT_FOUND(HttpStatus.NOT_FOUND, "-131", "존재하지 않는 포트폴리오 메인입니다."),
-    PORTFOLIO_MAIN_ALREADY_EXISTS(HttpStatus.NOT_FOUND, "-132", "이미 등록된 포트폴리오 메인입니다."),
+    PORTFOLIO_MAIN_ALREADY_EXISTS(HttpStatus.BAD_REQUEST, "-132", "이미 등록된 포트폴리오 메인입니다."),
     ;
 
     private final HttpStatus httpStatus;

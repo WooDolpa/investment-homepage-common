@@ -42,4 +42,12 @@ public class PortfolioMain extends BaseEntity {
         this.orderNum = orderNum;
         this.portfolio = portfolio;
     }
+
+    public void increaseOrderNum() {
+        this.orderNum++;
+    }
+
+    public void decreaseOrderNum() {
+        this.orderNum--;
+    }
 }
