@@ -33,6 +33,10 @@ public class Portfolio extends BaseEntity {
     @Comment("포트폴리오 번호")
     private Integer portfolioNo;
 
+    @Column(name = "portfolio_date")
+    @Comment("포트폴리오 날짜")
+    private String portfolioDate;
+
     @Column(name = "portfolio_title")
     @Comment("포트폴리오 제목")
     private String portfolioTitle;
@@ -64,8 +68,9 @@ public class Portfolio extends BaseEntity {
     private DataStatus dataStatus;
 
     @Builder
-    public Portfolio(Integer portfolioNo, String portfolioTitle, String portfolioSummary, String portfolioImgUrl, String portfolioContents, Integer orderNum, PortfolioType portfolioType, DataStatus dataStatus) {
+    public Portfolio(Integer portfolioNo, String portfolioDate, String portfolioTitle, String portfolioSummary, String portfolioImgUrl, String portfolioContents, Integer orderNum, PortfolioType portfolioType, DataStatus dataStatus) {
         this.portfolioNo = portfolioNo;
+        this.portfolioDate = portfolioDate;
         this.portfolioTitle = portfolioTitle;
         this.portfolioSummary = portfolioSummary;
         this.portfolioImgUrl = portfolioImgUrl;
@@ -87,6 +92,12 @@ public class Portfolio extends BaseEntity {
 
     public void decreaseOrderNum() {
         orderNum--;
+    }
+
+    public void changePortfolioDate(String portfolioDate) {
+        if(StringUtils.hasText(portfolioDate)) {
+            this.portfolioDate = portfolioDate;
+        }
     }
 
     public void changePortfolioTitle(String portfolioTitle) {
