@@ -35,6 +35,10 @@ public class PortfolioNews extends BaseEntity {
     @Comment("뉴스 링크")
     private String newsLink;
 
+    @Column(name = "order_num")
+    @Comment("순번")
+    private Integer orderNum;
+
     @Convert(converter = DataStatusConverter.class)
     @Column(name = "data_status", nullable = false)
     @Comment("데이터 상태")
@@ -46,12 +50,21 @@ public class PortfolioNews extends BaseEntity {
     private Portfolio portfolio;
 
     @Builder
-    public PortfolioNews(Integer portfolioNewsNo, String newsTitle, String newsAgency, String newsLink, DataStatus dataStatus, Portfolio portfolio) {
+    public PortfolioNews(Integer portfolioNewsNo, String newsTitle, String newsAgency, String newsLink, Integer orderNum, DataStatus dataStatus, Portfolio portfolio) {
         this.portfolioNewsNo = portfolioNewsNo;
         this.newsTitle = newsTitle;
         this.newsAgency = newsAgency;
         this.newsLink = newsLink;
+        this.orderNum = orderNum;
         this.dataStatus = dataStatus;
         this.portfolio = portfolio;
+    }
+
+    public void increaseOrderNum() {
+        orderNum++;
+    }
+
+    public void decreaseOrderNum() {
+        orderNum--;
     }
 }
