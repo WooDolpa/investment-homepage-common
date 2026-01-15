@@ -67,4 +67,10 @@ public class PortfolioNews extends BaseEntity {
     public void decreaseOrderNum() {
         orderNum--;
     }
+
+    public void changeOrderNum(Integer orderNum) {
+        if(orderNum != null && orderNum > 0) {
+            this.orderNum = orderNum;
+        }
+    }
 }

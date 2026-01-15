@@ -52,7 +52,7 @@ public class PortfolioMain extends BaseEntity {
     }
 
     public void changeOrderNum(Integer orderNum) {
-        if(orderNum != null) {
+        if(orderNum != null && orderNum > 0) {
             this.orderNum = orderNum;
         }
     }
