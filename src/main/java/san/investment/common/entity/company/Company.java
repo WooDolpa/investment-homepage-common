@@ -58,6 +58,14 @@ public class Company extends BaseEntity {
     @Comment("주소 상세")
     private String addressDetail;
 
+    @Column(name = "business_card1", length = 100)
+    @Comment("명함 이미지 1")
+    private String businessCard1;
+
+    @Column(name = "business_card2", length = 100)
+    @Comment("명함 이미지 2")
+    private String businessCard2;
+
     @Convert(converter = DataStatusConverter.class)
     @Column(name = "data_status", nullable = false)
     @Comment("데이터 상태")
@@ -102,6 +110,18 @@ public class Company extends BaseEntity {
     public void changeMainImgUrl(String mainImgUrl) {
         if(StringUtils.hasText(mainImgUrl)) {
             this.mainImgUrl = mainImgUrl;
+        }
+    }
+
+    public void changeBusinessCard1(String businessCard1) {
+        if(StringUtils.hasText(businessCard1)) {
+            this.businessCard1 = businessCard1;
+        }
+    }
+
+    public void changeBusinessCard2(String businessCard2) {
+        if(StringUtils.hasText(businessCard2)) {
+            this.businessCard2 = businessCard2;
         }
     }
 }
